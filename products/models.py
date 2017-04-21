@@ -1,4 +1,6 @@
-from django.db import models
+import os
+
+from django.template.defaultfilters import slugify
 
 
 from django.db import models
@@ -22,6 +24,11 @@ class Category(models.Model):
         return reverse('shop:product_list_by_category', args=[self.slug])
 
 class Product(models.Model):
+    TIPOS = (
+        ('libros', 'Libros'),
+        ('audios', 'Audios'),
+        ('ideos', 'Videos')
+    )
     category=models.ForeignKey(Category,related_name='products')
     name=models.CharField(max_length=200,db_index=True)
     slug=models.SlugField(max_length=200,db_index=True)
@@ -32,6 +39,7 @@ class Product(models.Model):
     available=models.BooleanField(default=True)
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now=True)
+    type=models.CharField(max_length=140, choices=TIPOS)
 
     class Meta:
         ordering=('name',)
@@ -43,3 +51,21 @@ class Product(models.Model):
     def get_absolute_url(self):
         return reverse('shop:product_detail',
             args=[self.id,self.slug])
+
+
+class Document(models.Model):
+    title = models.CharField(max_length=140)
+    file = models.FileField()
+
+    def __str__(self):
+        return self.title
+
+    @property
+    def pretty_name(self):
+        return "{0}.{1}".format(slugify(self.title),
+                                get_extension(self.file.name))
+
+
+
+def get_extension(filename):
+    return os.path.splitext(filename)[1]
