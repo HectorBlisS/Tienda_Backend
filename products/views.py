@@ -2,8 +2,9 @@ from django.shortcuts import render, HttpResponse
 from rest_framework import viewsets
 from rest_framework.views import APIView
 from .models import Product
-from .serializers import ProductSerializer
-from .models import Document
+from .serializers import ProductSerializer, CategorySerializer
+from .models import Document, Category
+from rest_framework import generics
 
 #permisos
 from rest_framework import permissions
@@ -12,6 +13,11 @@ from rest_framework import permissions
 class ProductsViewsets(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+
+
+class CategoryView(generics.ListAPIView):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
 
 
 class DocumentView(APIView):

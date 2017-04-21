@@ -20,7 +20,7 @@ urlpatterns = [
         view=serve,
         kwargs={'document_root':settings.MEDIA_ROOT}
         ),
-    url(r'^test/', include(productUrls))
+    url(r'^extra/', include(productUrls))
     #url(r'^mensajes', include(apiUrls))
 ]
 
