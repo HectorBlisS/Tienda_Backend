@@ -89,12 +89,28 @@ WSGI_APPLICATION = 'social_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+# if not DEBUG:
+if not DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME':'tienda_erick',
+            'USER':'fixter',
+            'PASSWORD':'fixtergeek',
+            # 'HOST':'54.213.147.140',
+            # 'HOST':'54.200.214.156',
+            'HOST':'localhost',
+            # 'PORT':'5432',
+            'PORT':''
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 
 # Password validation
