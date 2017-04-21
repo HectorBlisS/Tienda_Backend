@@ -7,10 +7,17 @@ from rest_framework import routers
 from products.views import ProductsViewsets
 from orders.views import OrderViewSet
 
+from django.views.static import serve
+from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^auth/', include(socialUrls))
+    url(r'^auth/', include(socialUrls)),
+    url(
+        regex=r'^media/(?P<path>.*)$',
+        view=serve,
+        kwargs={'document_root':settings.MEDIA_ROOT}
+        ),
     #url(r'^mensajes', include(apiUrls))
 ]
 
