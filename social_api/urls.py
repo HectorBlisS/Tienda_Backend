@@ -10,6 +10,8 @@ from orders.views import OrderViewSet
 from django.views.static import serve
 from django.conf import settings
 
+from products import urls as productUrls
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^auth/', include(socialUrls)),
@@ -18,6 +20,7 @@ urlpatterns = [
         view=serve,
         kwargs={'document_root':settings.MEDIA_ROOT}
         ),
+    url(r'^test/', include(productUrls))
     #url(r'^mensajes', include(apiUrls))
 ]
 

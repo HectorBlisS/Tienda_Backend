@@ -6,6 +6,10 @@ from django.template.defaultfilters import slugify
 from django.db import models
 from django.core.urlresolvers import reverse
 
+from django.conf import settings
+#defino mi propio storage
+from django.core.files.storage import FileSystemStorage
+my_store = FileSystemStorage(base_url=settings.DOCS, location='pdf/')
 
 
 class Category(models.Model):
@@ -27,7 +31,7 @@ class Product(models.Model):
     TIPOS = (
         ('libros', 'Libros'),
         ('audios', 'Audios'),
-        ('ideos', 'Videos')
+        ('videos', 'Videos')
     )
     category=models.ForeignKey(Category,related_name='products')
     name=models.CharField(max_length=200,db_index=True)
@@ -55,7 +59,7 @@ class Product(models.Model):
 
 class Document(models.Model):
     title = models.CharField(max_length=140)
-    file = models.FileField()
+    file = models.FileField(upload_to='documentos/')
 
     def __str__(self):
         return self.title
@@ -69,3 +73,6 @@ class Document(models.Model):
 
 def get_extension(filename):
     return os.path.splitext(filename)[1]
+
+
+
