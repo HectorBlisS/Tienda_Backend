@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1ab3e1c-362a-454d-a0a5-8bba09dbd91c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/products/admin.py" afterPath="$PROJECT_DIR$/products/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/social_api/settings.py" afterPath="$PROJECT_DIR$/social_api/settings.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,8 +17,8 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/social_api/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+            <state relative-caret-position="80">
+              <caret line="158" column="0" lean-forward="false" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -149,10 +149,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="62" />
+    <option name="x" value="827" />
     <option name="y" value="23" />
     <option name="width" value="802" />
-    <option name="height" value="1027" />
+    <option name="height" value="745" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -453,7 +453,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="62" y="23" width="802" height="1027" extended-state="0" />
+    <frame x="827" y="23" width="802" height="745" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -777,8 +777,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/social_api/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        <state relative-caret-position="80">
+          <caret line="158" column="0" lean-forward="false" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
           <folding />
         </state>
       </provider>
