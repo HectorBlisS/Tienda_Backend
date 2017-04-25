@@ -5,15 +5,17 @@ from rest_framework import permissions
 from rest_framework.response import Response
 from .serializers import TodaySerializer, FraseSerializer
 
+#tarea
+from .tasks import change_frase
 
 class FraseView(APIView):
     #permission_classes = (permissions.IsAuthenticated,)
-    serializer_class = TodaySerializer
 
     def get(self, request):
         today = Today.objects.get(id=1)
         frase = today.frase
         serializer = FraseSerializer(frase)
         frase = serializer.data
+        #change_frase.delay()
         return Response(frase)
 
