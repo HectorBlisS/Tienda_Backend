@@ -12,6 +12,9 @@ from django.conf import settings
 
 from products import urls as productUrls
 
+#frase
+from phrases.views import FraseView
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^auth/', include(socialUrls)),
@@ -20,7 +23,8 @@ urlpatterns = [
         view=serve,
         kwargs={'document_root':settings.MEDIA_ROOT}
         ),
-    url(r'^extra/', include(productUrls))
+    url(r'^extra/', include(productUrls)),
+    url(r'^frase/$', FraseView.as_view(), name="frase")
     #url(r'^mensajes', include(apiUrls))
 ]
 
