@@ -5,7 +5,7 @@ from celery.task.schedules import crontab
 from celery.decorators import periodic_task
 
 
-@periodic_task(run_every=(crontab(minute='40', hour='19')), name="frase", ignore_result=True)
+@periodic_task(run_every=(crontab(minute=0, hour='20')), name="frase", ignore_result=True)
 #@task
 def change_frase():
     frase = random_frase()

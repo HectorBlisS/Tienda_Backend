@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1ab3e1c-362a-454d-a0a5-8bba09dbd91c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/celerybeat-schedule.db" afterPath="$PROJECT_DIR$/celerybeat-schedule.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phrases/tasks.py" afterPath="$PROJECT_DIR$/phrases/tasks.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/products/serializers.py" afterPath="$PROJECT_DIR$/products/serializers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/social_api/settings.py" afterPath="$PROJECT_DIR$/social_api/settings.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,11 +14,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/social_api/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="139" column="32" lean-forward="false" selection-start-line="139" selection-start-column="32" selection-end-line="139" selection-end-column="32" />
+            <state relative-caret-position="412">
+              <caret line="114" column="0" lean-forward="true" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -69,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tasks.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tasks.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/phrases/tasks.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="140">
-              <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+              <caret line="7" column="52" lean-forward="false" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -146,8 +143,8 @@
         <option value="$PROJECT_DIR$/social_api/__init__.py" />
         <option value="$PROJECT_DIR$/phrases/views.py" />
         <option value="$PROJECT_DIR$/products/serializers.py" />
-        <option value="$PROJECT_DIR$/phrases/tasks.py" />
         <option value="$PROJECT_DIR$/social_api/settings.py" />
+        <option value="$PROJECT_DIR$/phrases/tasks.py" />
       </list>
     </option>
   </component>
@@ -884,21 +881,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/phrases/tasks.py">
+    <entry file="file://$PROJECT_DIR$/social_api/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="412">
+          <caret line="114" column="0" lean-forward="true" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/social_api/settings.py">
+    <entry file="file://$PROJECT_DIR$/phrases/tasks.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="139" column="32" lean-forward="false" selection-start-line="139" selection-start-column="32" selection-end-line="139" selection-end-column="32" />
-          <folding />
+        <state relative-caret-position="140">
+          <caret line="7" column="52" lean-forward="false" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
