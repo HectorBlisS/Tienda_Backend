@@ -1,3 +1,4 @@
+from django.shortcuts import HttpResponse
 from rest_framework import viewsets
 from rest_framework.viewsets import GenericViewSet
 from rest_framework.views import APIView
@@ -50,7 +51,7 @@ class OrderAndPay(APIView):
             mensaje = e
 
 
-        return JsonResponse(dict(mensaje))
+        return HttpResponse(mensaje)
 
 
 #class ItemsCreateView(generics.CreateAPIView):
