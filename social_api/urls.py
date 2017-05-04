@@ -5,7 +5,7 @@ from rest_framework_social_oauth2 import urls as socialUrls
 
 from rest_framework import routers
 from products.views import ProductsViewsets
-from orders.views import OrderViewSet
+from orders.views import OrderViewSet, OrderAndPay
 
 from django.views.static import serve
 from django.conf import settings
@@ -24,7 +24,8 @@ urlpatterns = [
         kwargs={'document_root':settings.MEDIA_ROOT}
         ),
     url(r'^extra/', include(productUrls)),
-    url(r'^frase/$', FraseView.as_view(), name="frase")
+    url(r'^frase/$', FraseView.as_view(), name="frase"),
+    url(r'^pay/$', OrderAndPay.as_view())
     #url(r'^mensajes', include(apiUrls))
 ]
 
