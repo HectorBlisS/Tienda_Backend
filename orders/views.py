@@ -45,7 +45,7 @@ class OrderAndPay(APIView):
                 amount=int(total*100),
                 currency="mxn",
                 description="Cargo pro recurso Erick de la Parra",
-                source="tok_visa",  # obtained with Stripe.js
+                source=data['token'],  # obtained with Stripe.js
             )
         except Exception as e:
             mensaje = e
