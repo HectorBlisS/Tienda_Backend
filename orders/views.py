@@ -50,7 +50,7 @@ class OrderAndPay(APIView):
             mensaje = e
 
 
-        return JsonResponse(mensaje, safe=False)
+        return JsonResponse(dict(mensaje))
 
 
 #class ItemsCreateView(generics.CreateAPIView):
