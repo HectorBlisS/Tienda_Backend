@@ -42,7 +42,7 @@ class OrderAndPay(APIView):
         stripe.api_key = 'sk_test_zWlHDjttH9ag2aLf4cxF9QhE'
         try:
              mensaje = stripe.Charge.create(
-                amount=int(total),
+                amount=int(total*100),
                 currency="mxn",
                 description="Cargo pro recurso Erick de la Parra",
                 source="tok_visa",  # obtained with Stripe.js
