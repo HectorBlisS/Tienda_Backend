@@ -51,7 +51,7 @@ class OrderAndPay(APIView):
             mensaje = e
 
 
-        return JsonResponse(mensaje)
+        return HttpResponse(mensaje)
 
 
 #class ItemsCreateView(generics.CreateAPIView):
