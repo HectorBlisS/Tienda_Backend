@@ -8,6 +8,7 @@ from rest_framework.response import Response
 from rest_framework import generics
 from products.models import Product
 import stripe
+from django.http import JsonResponse
 
 
 
@@ -49,7 +50,7 @@ class OrderAndPay(APIView):
             mensaje = e
 
 
-        return Response(mensaje)
+        return JsonResponse(mensaje)
 
 
 #class ItemsCreateView(generics.CreateAPIView):
