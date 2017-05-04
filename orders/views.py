@@ -49,7 +49,7 @@ class OrderAndPay(APIView):
             mensaje = e
 
 
-        return Response(mensaje)
+        return Response('putos')
 
 
 #class ItemsCreateView(generics.CreateAPIView):
