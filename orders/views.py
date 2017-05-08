@@ -13,10 +13,16 @@ from django.http import JsonResponse
 
 
 
-class OrderViewSet(viewsets.ModelViewSet):
+class OwnerMixin(object):
+    def get_queryset(self):
+        qs = super(OwnerMixin, self).get_queryset()
+        return qs.filter(user=self.request.user)
+
+class OrderViewSet(OwnerMixin, viewsets.ModelViewSet):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
-    #permission_classes = (permissions.IsAuthenticated)
+    permission_classes = (permissions.IsAuthenticated,)
+
 
 
 class OrderAndPay(APIView):
