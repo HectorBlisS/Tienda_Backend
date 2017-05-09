@@ -60,12 +60,12 @@ class OrderAndPay(APIView):
             )
             order.paid = True
             order.save()
-            # for c in comprados:
-            #     try:
-            #         d = c.documents.all()[0]
-            #         d.users.add(request.user)
-            #     except:
-            #         pass
+            for c in comprados:
+                try:
+                    d = c.documents.all()[0]
+                    d.users.add(request.user)
+                except:
+                    pass
                 
 
         except Exception as e:
