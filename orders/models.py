@@ -1,6 +1,7 @@
 from django.db import models
 from products.models import Product
 from django.contrib.auth.models import User
+from coupons.models import Coupon
 
 
 class Order(models.Model):
@@ -14,6 +15,7 @@ class Order(models.Model):
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now=True)
     paid=models.BooleanField(default=False)
+    coupon = models.ForeignKey(Coupon, related_name='orders', blank=True, null=True)
 
     class Meta:
         ordering=('-created',)

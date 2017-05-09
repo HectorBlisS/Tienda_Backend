@@ -48,8 +48,10 @@ class OrderAndPay(APIView):
         if (data['coupon']):
             coupon = Coupon.objects.get(id=data['coupon'])
             total = total - (total*(.01*coupon.discount))
+            order.coupon = coupon
+            order.save()
 
-            print('el total',total)
+        print('el total',total)
 
         #stripe
         stripe.api_key = 'sk_test_zWlHDjttH9ag2aLf4cxF9QhE'
