@@ -27,8 +27,10 @@ class DocumentView(APIView):
     """
     def get(self, request, doc_id):
         document = Document.objects.get(id=doc_id)
-        response = HttpResponse()
-        response.content = document.file.read()
-        response["Content-Disposition"] = "attachment; filename={0}".format(
-            document.pretty_name)
-        return response
+        if document.users.filter(id=request.user.id).exists():
+            response = HttpResponse()
+            response.content = document.file.read()
+            response["Content-Disposition"] = "attachment; filename={0}".format(
+                document.pretty_name)
+            return response
+        return HttpResponse("No haz comprado este articulo")

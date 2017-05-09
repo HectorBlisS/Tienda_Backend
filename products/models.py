@@ -11,6 +11,8 @@ from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 my_store = FileSystemStorage(base_url=settings.DOCS, location='pdf/')
 
+from django.contrib.auth.models import User
+
 
 class Category(models.Model):
     name=models.CharField(max_length=200,db_index=True)
@@ -58,8 +60,10 @@ class Product(models.Model):
 
 
 class Document(models.Model):
+    product = models.ForeignKey(Product, related_name='documents')
     title = models.CharField(max_length=140)
     file = models.FileField(upload_to='documentos/')
+    users = models.ManyToManyField(User, related_name='documents')
 
     def __str__(self):
         return self.title

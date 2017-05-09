@@ -1,9 +1,16 @@
 from django.contrib import admin
 from .models import Product, Category, Document
 
-admin.site.register(Product)
 
-admin.site.register(Document)
+class ProductAdmin(admin.ModelAdmin):
+	list_display = ['id','name']
+
+admin.site.register(Product, ProductAdmin)
+
+class DocumentAdmin(admin.ModelAdmin):
+	list_display = ['id','title']
+
+admin.site.register(Document, DocumentAdmin)
 
 
 class CategoryAdmin(admin.ModelAdmin):

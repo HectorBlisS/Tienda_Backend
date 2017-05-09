@@ -7,7 +7,7 @@ from .models import Order, OrderItem
 from .serializers import OrderSerializer, OrderItemSerializer
 from rest_framework.response import Response
 from rest_framework import generics
-from products.models import Product
+from products.models import Product, Document
 import stripe
 from django.http import JsonResponse
 
@@ -30,34 +30,47 @@ class OrderAndPay(APIView):
     Create an Order and try to charge
     """
     def post(self, request):
+        comprados = []
         mensaje = 'nada'
-        permission_classes = (permissions.IsAuthenticated,)
+        # permission_classes = (permissions.IsAuthenticated,)
         data = request.data
+        print(data)
         order = Order.objects.create(user=request.user)
-        print(order)
+        print('la orden:', order)
         for i in data['items']:
             product = Product.objects.get(id=i['product'])
             OrderItem.objects.create(order=order,
                                      product=product,
                                      price=product.price,
                                      quantity=i['quantity'])
+            comprados.append(product.id)
+        print('comprados',comprados)
         total = order.get_total_cost()
         print('el total',total)
 
         #stripe
         stripe.api_key = 'sk_test_zWlHDjttH9ag2aLf4cxF9QhE'
         try:
-             mensaje = stripe.Charge.create(
+            mensaje = stripe.Charge.create(
                 amount=int(total*100),
-                currency="mxn",
-                description="Cargo pro recurso Erick de la Parra",
+                currency="cad",
+                description="Cargo por recurso Erick de la Parra",
                 source=data['token'],  # obtained with Stripe.js
             )
+            order.pay = True
+            order.save()
+            for c in comprados:
+                d = Document.objects.get(pk=c)
+                d.users.add(request.user)
+            print('try')
+
         except Exception as e:
             mensaje = e
+            # mensaje = 'error'
+            print('error')
 
 
-        return JsonResponse(mensaje)
+        return JsonResponse(mensaje, safe=False)
 
 
 #class ItemsCreateView(generics.CreateAPIView):
