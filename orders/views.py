@@ -57,7 +57,7 @@ class OrderAndPay(APIView):
                 description="Cargo por recurso Erick de la Parra",
                 source=data['token'],  # obtained with Stripe.js
             )
-            order.pay = True
+            order.paid = True
             order.save()
             for c in comprados:
                 d = Document.objects.get(pk=c)
