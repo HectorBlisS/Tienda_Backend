@@ -43,7 +43,7 @@ class OrderAndPay(APIView):
                                      product=product,
                                      price=product.price,
                                      quantity=i['quantity'])
-            comprados.append(product.id)
+            comprados.append(product)
         print('comprados',comprados)
         total = order.get_total_cost()
         print('el total',total)
@@ -60,14 +60,13 @@ class OrderAndPay(APIView):
             order.paid = True
             order.save()
             for c in comprados:
-                d = Document.objects.get(pk=c)
+                d = c.documents.all()[0]
                 d.users.add(request.user)
-            print('try')
+          
 
         except Exception as e:
-            mensaje = e
-            # mensaje = 'error'
-            print('error')
+            mensaje = "Ocurrió un error en el cargo"
+            # mensaje = e
 
 
         return JsonResponse(mensaje, safe=False)
