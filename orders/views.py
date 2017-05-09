@@ -51,7 +51,8 @@ class OrderAndPay(APIView):
         #stripe
         stripe.api_key = 'sk_test_zWlHDjttH9ag2aLf4cxF9QhE'
         try:
-            mensaje = stripe.Charge.create(
+            mensaje = 'paso el try'
+            stripe.Charge.create(
                 amount=int(total*100),
                 currency="cad",
                 description="Cargo por recurso Erick de la Parra",
@@ -64,6 +65,7 @@ class OrderAndPay(APIView):
                 d.users.add(request.user)
 
         except Exception as e:
+            print(e)
             mensaje = "Ocurrió un error"
             # mensaje = e
 
