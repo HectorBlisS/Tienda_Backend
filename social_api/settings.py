@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '%l@41gedgz14+jawbksbcaefnifp%cvedf^n7#gp2oh@8y)0je'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -92,7 +92,7 @@ WSGI_APPLICATION = 'social_api.wsgi.application'
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 # if not DEBUG:
-if not DEBUG:
+if DEBUG:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',

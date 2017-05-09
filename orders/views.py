@@ -10,7 +10,7 @@ from rest_framework import generics
 from products.models import Product, Document
 import stripe
 from django.http import JsonResponse
-
+from coupons.models import Coupon
 
 
 class OwnerMixin(object):
@@ -45,7 +45,11 @@ class OrderAndPay(APIView):
                                      quantity=i['quantity'])
             comprados.append(product)
         total = order.get_total_cost()
-        print('el total',total)
+        if (data['coupon']):
+            coupon = Coupon.objects.get(id=data['coupon'])
+            total = total - (total*(.01*coupon.discount))
+
+            print('el total',total)
 
         #stripe
         stripe.api_key = 'sk_test_zWlHDjttH9ag2aLf4cxF9QhE'
