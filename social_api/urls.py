@@ -17,6 +17,8 @@ from phrases.views import FraseView
 
 #accounts
 from accounts import urls as accountsUrls
+#coupons
+from coupons import urls as couponsUrls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -29,7 +31,8 @@ urlpatterns = [
     url(r'^extra/', include(productUrls)),
     url(r'^frase/$', FraseView.as_view(), name="frase"),
     url(r'^pay/$', OrderAndPay.as_view()),
-    url(r'^accounts/', include(accountsUrls))
+    url(r'^accounts/', include(accountsUrls)),
+    url(r'^coupon/', include(couponsUrls))
     #url(r'^mensajes', include(apiUrls))
 ]
 
