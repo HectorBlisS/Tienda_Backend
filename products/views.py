@@ -11,7 +11,7 @@ from rest_framework import permissions
 
 
 class ProductsViewsets(viewsets.ModelViewSet):
-    queryset = Product.objects.all()
+    queryset = Product.objects.all().filter(available=True)
     serializer_class = ProductSerializer
 
 
