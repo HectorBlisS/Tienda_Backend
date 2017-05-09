@@ -62,10 +62,9 @@ class OrderAndPay(APIView):
             for c in comprados:
                 d = c.documents.all()[0]
                 d.users.add(request.user)
-          
 
         except Exception as e:
-            mensaje = "Ocurrió un error en el cargo"
+            mensaje = "Ocurrió un error"
             # mensaje = e
 
 
