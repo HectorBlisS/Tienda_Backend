@@ -44,7 +44,6 @@ class OrderAndPay(APIView):
                                      price=product.price,
                                      quantity=i['quantity'])
             comprados.append(product)
-        print('comprados',comprados)
         total = order.get_total_cost()
         print('el total',total)
 
