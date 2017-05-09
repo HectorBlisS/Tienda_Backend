@@ -5,10 +5,19 @@ from .models import Product
 from .serializers import ProductSerializer, CategorySerializer
 from .models import Document, Category
 from rest_framework import generics
+from rest_framework.generics import ListAPIView
 
 #permisos
 from rest_framework import permissions
 
+
+class ProductListOwner(ListAPIView):
+    serializer_class = ProductSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        return self.request.user.products.all()
+        
 
 class ProductsViewsets(viewsets.ModelViewSet):
     queryset = Product.objects.all().filter(available=True)
@@ -27,7 +36,8 @@ class DocumentView(APIView):
     """
     def get(self, request, doc_id):
         document = Document.objects.get(id=doc_id)
-        if document.users.filter(id=request.user.id).exists():
+        product = Product.objects.get(id=doc_id)
+        if product.users.filter(id=request.user.id).exists():
             response = HttpResponse()
             response.content = document.file.read()
             response["Content-Disposition"] = "attachment; filename={0}".format(

@@ -61,8 +61,7 @@ class OrderAndPay(APIView):
             order.save()
             for c in comprados:
                 try:
-                    d = c.documents.all()[0]
-                    d.users.add(request.user)
+                    c.users.add(request.user)
                 except:
                     pass
                 

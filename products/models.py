@@ -46,6 +46,7 @@ class Product(models.Model):
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now=True)
     type=models.CharField(max_length=140, choices=TIPOS)
+    users = models.ManyToManyField(User, related_name='products')
 
     class Meta:
         ordering=('name',)
@@ -63,7 +64,7 @@ class Document(models.Model):
     product = models.ForeignKey(Product, related_name='documents')
     title = models.CharField(max_length=140)
     file = models.FileField(upload_to='documentos/')
-    users = models.ManyToManyField(User, related_name='documents')
+    # users = models.ManyToManyField(User, related_name='documents')
 
     def __str__(self):
         return self.title
