@@ -1,13 +1,17 @@
 from rest_framework import routers
-from .views import ListasViewset, UserCreateView
-from django.conf.urls import url
+from .views import ListasViewset, UserData, UserEdit, UserCreateView
+from django.conf.urls import url, include
 
 
 router = routers.DefaultRouter()
 router.register(r'mensajes', ListasViewset)
 router.register(r'signup', UserCreateView)
 
-urlpatterns = router.urls
+urlpatterns = [
+	url(r'^profile/$', UserData.as_view()),
+	url(r'^profile/(?P<pk>\d+)/$', UserEdit.as_view()),
+	url(r'^', include(router.urls))
+]
 
 # urlpatterns += [url(r'^signup/$', UserCreateView.as_view())]
 

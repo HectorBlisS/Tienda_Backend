@@ -92,7 +92,7 @@ WSGI_APPLICATION = 'social_api.wsgi.application'
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 # if not DEBUG:
-if DEBUG:
+if not DEBUG:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
