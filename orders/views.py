@@ -47,7 +47,7 @@ class OrderAndPay(APIView):
         total = order.get_total_cost()
         if (data['coupon']):
             coupon = Coupon.objects.get(id=data['coupon'])
-            total = total - (total*(.01*coupon.discount))
+            total = int(total) - (int(total)*(.01*coupon.discount))
             order.coupon = coupon
             order.save()
 
@@ -61,7 +61,8 @@ class OrderAndPay(APIView):
                 amount=int(total*100),
                 currency="cad",
                 description="Cargo por recurso Erick de la Parra",
-                source=data['token'],  # obtained with Stripe.js
+                source=data['token'],  # obtained with Stripe.js,
+                receipt_email=data['email']
             )
             order.paid = True
             order.save()

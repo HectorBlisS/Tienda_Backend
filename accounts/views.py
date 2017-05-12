@@ -19,9 +19,11 @@ class ListasViewset(viewsets.ModelViewSet):
     serializer_class = ListaSerializer
     permission_classes = [IsAuthenticated]
 
+
 class UserCreateView(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
 
 class UserData(OwnerMixin, ListAPIView):
 	serializer_class = UserSerializer
@@ -29,6 +31,7 @@ class UserData(OwnerMixin, ListAPIView):
 
 	def get_queryset(self):
 		return [self.request.user]
+
 
 class UserEdit(OwnerMixin, RetrieveUpdateAPIView):
 	serializer_class = UserSerializer
