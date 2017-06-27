@@ -20,6 +20,9 @@ from accounts import urls as accountsUrls
 #coupons
 from coupons import urls as couponsUrls
 
+#storage
+from cloud_storage.views import CloudView
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^auth/', include(socialUrls)),
@@ -32,7 +35,8 @@ urlpatterns = [
     url(r'^frase/$', FraseView.as_view(), name="frase"),
     url(r'^pay/$', OrderAndPay.as_view()),
     url(r'^accounts/', include(accountsUrls)),
-    url(r'^coupon/', include(couponsUrls))
+    url(r'^coupon/', include(couponsUrls)),
+    url(r'^cloud/$', CloudView.as_view())
     #url(r'^mensajes', include(apiUrls))
 ]
 

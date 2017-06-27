@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '%l@41gedgz14+jawbksbcaefnifp%cvedf^n7#gp2oh@8y)0je'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     'phrases',
     'products',
     'payments',
-    'coupons'
+    'coupons',
+    'cloud_storage'
 ]
 
 MIDDLEWARE = [
