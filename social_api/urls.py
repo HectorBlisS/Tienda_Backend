@@ -21,7 +21,7 @@ from accounts import urls as accountsUrls
 from coupons import urls as couponsUrls
 
 #storage
-from cloud_storage.views import CloudView
+from cloud_storage.views import GetSignedUrl
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -36,7 +36,7 @@ urlpatterns = [
     url(r'^pay/$', OrderAndPay.as_view()),
     url(r'^accounts/', include(accountsUrls)),
     url(r'^coupon/', include(couponsUrls)),
-    url(r'^cloud/$', CloudView.as_view())
+    url(r'^cloud/$', GetSignedUrl.as_view())
     #url(r'^mensajes', include(apiUrls))
 ]
 

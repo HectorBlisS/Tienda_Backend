@@ -25,6 +25,7 @@ gunicorn==19.7.1
 httplib2==0.10.3
 idna==2.5
 kombu==3.0.37
+oauth2client==4.1.1
 oauthlib==2.0.1
 olefile==0.44
 packaging==16.8

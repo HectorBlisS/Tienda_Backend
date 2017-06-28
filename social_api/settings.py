@@ -23,10 +23,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '%l@41gedgz14+jawbksbcaefnifp%cvedf^n7#gp2oh@8y)0je'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
+#configuration for google cloud storage
+
+BUCKET_NAME = 'tienda-eric'
+SERVICE_ACCOUNT_EMAIL = ('clave-tienda-eric@tienda-eric.iam.gserviceaccount.com')
+OBJECT_NAME = 'BRIEF.pdf'
+PRIVATE_KEY_PATH = os.path.join(os.path.dirname(__file__), 'tienda-eric-e3120f4dca2e.json')
 
 # Application definition
 
@@ -93,7 +99,7 @@ WSGI_APPLICATION = 'social_api.wsgi.application'
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 # if not DEBUG:
-if DEBUG:
+if not DEBUG:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
