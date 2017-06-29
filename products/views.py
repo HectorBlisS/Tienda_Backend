@@ -30,7 +30,7 @@ class CategoryView(generics.ListAPIView):
 
 
 class DocumentView(APIView):
-    permission_classes = (permissions.IsAuthenticated,)
+    #permission_classes = (permissions.IsAuthenticated,)
     """
     Redirect to a protected file
     """
