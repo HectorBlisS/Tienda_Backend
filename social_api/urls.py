@@ -36,7 +36,7 @@ urlpatterns = [
     url(r'^pay/$', OrderAndPay.as_view()),
     url(r'^accounts/', include(accountsUrls)),
     url(r'^coupon/', include(couponsUrls)),
-    url(r'^cloud/$', GetSignedUrl.as_view())
+    url(r'^cloud/(?P<doc_id>\d+)/$', GetSignedUrl.as_view())
     #url(r'^mensajes', include(apiUrls))
 ]
 
