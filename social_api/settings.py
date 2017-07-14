@@ -101,7 +101,7 @@ if not DEBUG:
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME':'fixter',
-            'USER':'fixterEric',
+            'USER':'fixtereric',
             'PASSWORD':'ericdelaparra',
             # 'HOST':'54.213.147.140',
             # 'HOST':'54.200.214.156',
