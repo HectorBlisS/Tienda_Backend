@@ -1,9 +1,8 @@
 from django.shortcuts import render, HttpResponse
 from rest_framework import viewsets
 from rest_framework.views import APIView
-from .models import Product
-from .serializers import ProductSerializer, CategorySerializer
-from .models import Document, Category
+from .models import Product, MainProduct, Document, Category
+from .serializers import ProductSerializer, CategorySerializer, MainProductSerializer
 from rest_framework import generics
 from rest_framework.generics import ListAPIView
 
@@ -44,3 +43,9 @@ class DocumentView(APIView):
                 document.pretty_name)
             return response
         return HttpResponse("No haz comprado este articulo")
+
+
+
+class MainProductView(ListAPIView):
+    queryset = MainProduct.objects.all()
+    serializer_class = MainProductSerializer

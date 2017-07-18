@@ -81,3 +81,9 @@ def get_extension(filename):
 
 
 
+class MainProduct(models.Model):
+    product = models.ForeignKey(Product, related_name='product')
+
+    def __str__(self):
+        return self.product.name
+

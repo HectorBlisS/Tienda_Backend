@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category, Document
+from .models import Product, Category, Document, MainProduct
 
 
 class ProductAdmin(admin.ModelAdmin):
@@ -18,3 +18,13 @@ class CategoryAdmin(admin.ModelAdmin):
 	prepopulated_fields={'slug':('name',)}
 
 admin.site.register(Category, CategoryAdmin)
+
+
+class MainProductAdmin(admin.ModelAdmin):
+	def has_add_permission(self, request):
+		count = MainProduct.objects.all().count()
+		if count == 0:
+			return True
+		return False
+
+admin.site.register(MainProduct, MainProductAdmin)
