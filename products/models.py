@@ -87,3 +87,13 @@ class MainProduct(models.Model):
     def __str__(self):
         return self.product.name
 
+
+class PhysicalProducts(models.Model):
+    name = models.CharField(max_length=200,db_index=True)
+    slug = models.SlugField(max_length=200,db_index=True,unique=True)
+    link = models.URLField(max_length=200)
+    language = models.CharField(max_length=200)
+    description = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.name

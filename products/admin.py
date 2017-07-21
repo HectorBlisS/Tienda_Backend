@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category, Document, MainProduct
+from .models import Product, Category, Document, MainProduct, PhysicalProducts
 
 
 class ProductAdmin(admin.ModelAdmin):
@@ -28,3 +28,5 @@ class MainProductAdmin(admin.ModelAdmin):
 		return False
 
 admin.site.register(MainProduct, MainProductAdmin)
+
+admin.site.register(PhysicalProducts)

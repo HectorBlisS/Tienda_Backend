@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Product, Category, MainProduct
+from .models import Product, Category, MainProduct, PhysicalProducts
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -19,3 +19,7 @@ class MainProductSerializer(serializers.ModelSerializer):
 		model = MainProduct
 		fields = '__all__'
 
+class PhysicalProductsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PhysicalProducts
+        fields = '__all__'
