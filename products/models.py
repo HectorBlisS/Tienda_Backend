@@ -45,6 +45,7 @@ class Product(models.Model):
     available=models.BooleanField(default=True)
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now=True)
+    fileName = models.CharField(max_length=200)
     type=models.CharField(max_length=140, choices=TIPOS)
     users = models.ManyToManyField(User, related_name='products')
 
