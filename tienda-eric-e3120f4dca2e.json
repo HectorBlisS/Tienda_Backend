@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "tienda-eric",
+  "private_key_id": "e3120f4dca2ec2a24c5e90235f038fb51146bbe8",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC7vzkloPpZcbz1\nixpqg21S40LdjuGVMMcVL1JQgA611/Y3COYDsjivWRDZ44vNHsHmLn2nZD0F/5kJ\nn7D9Y1vFAXQwpZs3uiaAr8GS4pG1v31LGkDfjReQQqWRVJ0jMUZDIjyVo+QVuOGL\nk3H29r6uw/VF00mPUTvoKUenVZl8mR0RRLNtFN0FSsKKqTCiGrhr46XvenQz/YOL\n/faORWdbYplvTMuBxSZ3TY4s0NcMTUY0Io2hA9WnsnhXBI8aAnq9iQjdjLcn5SKO\nWFRIE7iXRQc6wuhvqRBsIttwr1J54fSsZ9n6Puez2MyJbiJYSnON2vDninZ3z5eB\nyE8ETFPJAgMBAAECggEAEvgLkJM2qCHXOyHOTfOwcH74qwT8IsQ2YRwSX4LIubOz\nszTJdJclpgXEL5ePcO6KHbUVyftVNQ1xi2jgi4Fl7L4sXJvm1lcO+9KGJs6QdUH/\nKT7iThPlzRQGwWvAoqUgWbkUUPQpn845r436pj6g3mx7FA54cKv+9wJwtGXwJ4fu\nD180VShF1AiKCjNx2gUGjXGjD5cw9VEltCIkHbYM03TrKHvB6NZ+z9QyuSqNM8a8\nMJQURSPOd8Rqx+/5zDb6Q+Qjx6Z6V5wq1oeBt9MGflDuJbLS2OC8kmDSrwKuN77P\nHir082RKiyUYUu/CVE6GcBgabl+R/81kCI0UoNYADwKBgQD7ztZxEorXweHsu/y6\n3HKrH3JreDmYoj+1BrR4DOnyqAzmbr7Q2rKcOHfTpKTb1H0fS+/n34u1NXkeVM6t\njdE4KETOLFMk/mH9X+tfRDSnjr7Xkensd7dxpugd7HmrEx3/0U1tgEI8CsNhSVQ5\nD0llFNmdBwojQqz9hKXlIqaYnwKBgQC+315ceaN64WMmKChF2h0FVd5VCYBvc20o\nOY3qiE9abfJLgglkY6tEqSehxjG6Sr2Tg/66+QEQKqpM8k98SN8QyqSbWvDZH2vQ\nlNjaXT+S4rJIEdDdDO8b7xq5z7PHlyFoW/raB+zIcl8mAXJDSaDbLtmZ/cSvK35G\nezTjFv7ylwKBgFsWcDYI6hawOOSlAAAsXIKQZph/rf4LuxXl7gR7T2mK5te4eegd\nJH0kZBw4M7adwAFBO/BZyjTrufuB3B2l7mftES6vlAgOyS2ZtBALISz3kwtx6fez\nOrWvFco1T7HVwYVXljWlLtB/aDvaBdB6OieJikqmUEF/DgrLICOqDC+rAoGAdd3N\nkWFz+G+yIF/v7qKwBRlvgCer7ibjI1HXNxsRlZALbWFRl3KM0ot6c8XF83ov8yYx\naRhW9brDC10ehGsjhGT+nQjdbdafZ2BjQQUQOw5OdX668aYJCcDvSgrew8Op153l\nHDqEl4s5AmkmPDL9aBxYN2WjzWAYTEHM+Oa8bOUCgYEA2lUKp/ZE2FtC5pto5MAD\nGAwvXaqtK+RKcGotcYSsg9gYG9MTPaDUEgUVLpZJPTu/vxRrYfY342/WJH+HrhRl\nianX94UDfLWXFJCBdQJy8wUD6lEFjSoTMUwYDiLE+DY6jahf1SuA96ly9tayWlwj\nMvWsJnnPjvuZu8PFcc3T3Xw=\n-----END PRIVATE KEY-----\n",
+  "client_email": "clave-tienda-eric@tienda-eric.iam.gserviceaccount.com",
+  "client_id": "117396231069213944400",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/clave-tienda-eric%40tienda-eric.iam.gserviceaccount.com"
+}
