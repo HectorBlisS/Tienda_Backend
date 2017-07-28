@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse
-from django.conf import settings 
+from social_api.settings import BASE_DIR 
 from django.views.generic import View
 from rest_framework import permissions
 from rest_framework.views import APIView
@@ -20,14 +20,8 @@ class GetSignedUrl(APIView):
 
 	def get(self, request, doc_id):
 		product = Product.objects.get(id=doc_id)
-		print("nombre del producto", product.fileName)
-		print(settings.BASE_DIR)
 		if product.users.filter(id=request.user.id).exists():
-			print("entro al if")
-			try:
-				result = subprocess.run(["gsutil", "signurl", "-d", "10m", settings.BASE_DIR+"/tienda-eric-e3120f4dca2e.json", "gs://tienda-eric/"+product.fileName], stdout=subprocess.PIPE)
-			except Exception as e:
-				raise e
+			result = subprocess.run(["gsutil", "signurl", "-d", "10m", BASE_DIR+"/tienda-eric-e3120f4dca2e.json", "gs://tienda-eric/"+product.fileName], stdout=subprocess.PIPE)
 			result = result.stdout.decode("utf-8").split(" ")
 			return HttpResponse(result[3][9:])
 			
