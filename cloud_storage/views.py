@@ -22,12 +22,13 @@ class GetSignedUrl(APIView):
 		product = Product.objects.get(id=doc_id)
 		print("nombre del producto", product.fileName)
 		if product.users.filter(id=request.user.id).exists():
-			result = subprocess.run(["gsutil", "signurl", "-d", "10m", settings.BASE_DIR+"/tienda-eric-e3120f4dca2e.json", "gs://tienda-eric/"+product.fileName], stdout=subprocess.PIPE)
-			print("resultado1",result)
-			result = result.stdout.decode("utf-8").split(" ")
-			print("resultado2",result)
-			return HttpResponse(result[3][9:])
-
+			try:
+				result = subprocess.run(["gsutil", "signurl", "-d", "10m", settings.BASE_DIR+"/tienda-eric-e3120f4dca2e.json", "gs://tienda-eric/"+product.fileName], stdout=subprocess.PIPE)
+				result = result.stdout.decode("utf-8").split(" ")
+				return HttpResponse(result[3][9:])
+			except Exception as e:
+				print (e)
+			
 
 		return HttpResponse("No haz comprado este articulo")
 
