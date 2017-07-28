@@ -1,9 +1,10 @@
-from django.shortcuts import render, HttpResponse
+#from django.shortcuts import render, HttpResponse
 from social_api.settings import BASE_DIR 
 from django.views.generic import View
 from rest_framework import permissions
 from rest_framework.views import APIView
 from products.models import Product
+from django.http import HttpResponse
 
 """ Usando gsutil """
 
@@ -23,6 +24,7 @@ class GetSignedUrl(APIView):
 		if product.users.filter(id=request.user.id).exists():
 			result = subprocess.run(["gsutil", "signurl", "-d", "10m", BASE_DIR+"/tienda-eric-e3120f4dca2e.json", "gs://tienda-eric/"+product.fileName], stdout=subprocess.PIPE)
 			result = result.stdout.decode("utf-8").split(" ")
+			print("final", result[3][9:])
 			return HttpResponse(result[3][9:])
 			
 
