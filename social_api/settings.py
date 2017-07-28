@@ -25,7 +25,7 @@ SECRET_KEY = '%l@41gedgz14+jawbksbcaefnifp%cvedf^n7#gp2oh@8y)0je'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["api.davidzavala.me"]
 
 #configuration for google cloud storage
 
@@ -198,8 +198,8 @@ SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
 #CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ORIGIN_WHITELIST = (
-    'http://eric.davidzavala.me',
-    'http://localhost:8001/'
+    'eric.davidzavala.me',
+    'localhost:8001'
 )
 
 DOCS = os.path.join(BASE_DIR,'documentos/')
