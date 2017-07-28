@@ -24,7 +24,7 @@ class GetSignedUrl(APIView):
 		if product.users.filter(id=request.user.id).exists():
 			result = subprocess.run(["gsutil", "signurl", "-d", "10m", BASE_DIR+"/tienda-eric-e3120f4dca2e.json", "gs://tienda-eric/"+product.fileName], stdout=subprocess.PIPE)
 			result = result.stdout.decode("utf-8").split(" ")
-			print("final", result[3][9:])
+			print("final", result[3])
 			return HttpResponse(result[3][9:])
 			
 
