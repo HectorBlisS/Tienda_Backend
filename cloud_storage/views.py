@@ -26,7 +26,7 @@ class GetSignedUrl(APIView):
 			print("entro al if")
 			result = subprocess.run(["gsutil", "signurl", "-d", "10m", settings.BASE_DIR+"/tienda-eric-e3120f4dca2e.json", "gs://tienda-eric/"+product.fileName], stdout=subprocess.PIPE)
 			print("resul",result)
-			result = result.stdout.decode("utf-8").split(" ")
+			#result = result.stdout.decode("utf-8").split(" ")
 			for i in range(0,3):
 				print("resultado", i + result[i])
 			return HttpResponse(result[3][9:])
