@@ -198,7 +198,8 @@ SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
 #CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ORIGIN_WHITELIST = (
-    'http://eric.davidzavala.me'
+    'http://eric.davidzavala.me',
+    'http://localhost:8001/'
 )
 
 DOCS = os.path.join(BASE_DIR,'documentos/')
