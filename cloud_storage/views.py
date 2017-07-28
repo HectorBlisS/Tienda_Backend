@@ -21,9 +21,11 @@ class GetSignedUrl(APIView):
 	def get(self, request, doc_id):
 		product = Product.objects.get(id=doc_id)
 		print("nombre del producto", product.fileName)
+		print(settings.BASE_DIR)
 		if product.users.filter(id=request.user.id).exists():
 			result = subprocess.run(["gsutil", "signurl", "-d", "10m", settings.BASE_DIR+"/tienda-eric-e3120f4dca2e.json", "gs://tienda-eric/"+product.fileName], stdout=subprocess.PIPE)
 			result = result.stdout.decode("utf-8").split(" ")
+			print(result[3][9:])
 			return HttpResponse(result[3][9:])
 			
 
