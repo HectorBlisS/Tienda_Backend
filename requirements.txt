@@ -29,7 +29,7 @@ oauth2client==4.1.1
 oauthlib==2.0.1
 olefile==0.44
 packaging==16.8
-Pillow==4.1.0
+Pillow==6.2.0
 protobuf==3.3.0
 psycopg2==2.7.1
 pyasn1==0.2.3
