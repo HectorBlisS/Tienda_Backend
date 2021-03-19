@@ -14,7 +14,7 @@ django-braces==1.11.0
 django-cors-headers==2.0.2
 django-oauth-toolkit==0.12.0
 django-rest-framework-social-oauth2==1.0.5
-djangorestframework==3.6.2
+djangorestframework==3.11.2
 google-auth==1.0.1
 google-auth-httplib2==0.0.2
 google-cloud-core==0.25.0
