@@ -46,5 +46,5 @@ social-auth-app-django==1.1.0
 social-auth-core==1.2.0
 static3==0.7.0
 stripe==1.55.0
-urllib3==1.21.1
+urllib3==1.26.5
 vine==1.1.3
